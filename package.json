@@ -1,0 +1,33 @@
+{
+  "name": "shopy-items-inventory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chacka1315/shopy-items-inventory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chacka1315/shopy-items-inventory/issues"
+  },
+  "homepage": "https://github.com/chacka1315/shopy-items-inventory#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "globals": "^16.4.0",
+    "prettier": "3.6.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-validator": "^7.3.0",
+    "pg": "^8.16.3"
+  }
+}
