@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+    <main>
+      <form
+        action="/category/<%= category.id %>/update"
+        method="post"
+        class="addForm"
+      >
+        <div>
+          <label for="category_name">Category name:</label>
+          <input
+            type="text"
+            name="category_name"
+            id="category_name"
+            value="<%= category.name %>"
+            required
+            placeholder="i.e. Fast food"
+          />
+        </div>
+        <div>
+          <label for="category_description">Category description:</label>
+          <textarea name="category_description" id="category_description">
+<%= category.description %>
+          </textarea>
+        </div>
+        <%- include('../partials/formErrors') %>
+        <div><button type="submit">Submit</button></div>
+      </form>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

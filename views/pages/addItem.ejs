@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+    <main>
+      <form
+        action="/item/create/<%=categoryId %>"
+        method="post"
+        class="addForm"
+      >
+        <div>
+          <label for="item_name">Item name:</label>
+          <input
+            type="text"
+            id="item_name"
+            name="item_name"
+            value="<%= item.item_name %>"
+            required
+          />
+        </div>
+        <div>
+          <label for="item_price">Price:</label>
+          <input
+            type="text"
+            name="item_price"
+            id="item_price"
+            placeholder="Ex: 7.99"
+            value="<%= item.item_price %>"
+            required
+          />
+        </div>
+        <div>
+          <label for="item_stock">In stock:</label>
+          <input
+            type="text"
+            id="item_stock"
+            name="item_stock"
+            value="<%= item.item_stock %>"
+            required
+          />
+        </div>
+        <div>
+          <label for="item_img_link">Image link:</label>
+          <input
+            type="text"
+            name="item_img_link"
+            id="item_img_link"
+            value="<%= item.item_img_link %>"
+          />
+        </div>
+        <div>
+          <label for="item_description">Description:</label>
+          <textarea name="item_description" id="item_description">
+<%= item.item_description %>
+        </textarea
+          >
+        </div>
+        <%- include('../partials/formErrors') %>
+        <div><button type="submit">Submit</button></div>
+      </form>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

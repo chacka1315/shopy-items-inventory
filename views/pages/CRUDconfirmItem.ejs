@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/CRUDconfirm.css" />
+  <title>Shopy | Confirm</title>
+  <body>
+    <main>
+      <h1>This action need an admin password.</h1>
+      <form action="/item/<%= id %>/<%= confirmType %>/confirm" method="post">
+        <div style="display: none">
+          <div>
+            <label for="item_name">Item name:</label>
+            <input
+              type="text"
+              id="item_name"
+              name="item_name"
+              value="<%= item.name %>"
+            />
+          </div>
+          <div>
+            <label for="item_price">Price:</label>
+            <input
+              type="text"
+              name="item_price"
+              id="item_price"
+              placeholder="Ex: 7.99"
+              value="<%= item.price %>"
+            />
+          </div>
+          <div>
+            <label for="item_stock">In stock:</label>
+            <input
+              type="text"
+              id="item_stock"
+              name="item_stock"
+              value="<%= item.stock %>"
+            />
+          </div>
+          <div>
+            <label for="item_img_link">Image link:</label>
+            <input
+              type="text"
+              name="item_img_link"
+              id="item_img_link"
+              value="<%= item.image_link %>"
+            />
+          </div>
+          <div>
+            <label for="item_description">Description:</label>
+            <textarea name="item_description" id="item_description">
+<%= item.description %>
+            </textarea>
+          </div>
+        </div>
+
+        <label for="password">Enter the Shopy secret password:</label>
+        <input type="password" name="password" id="password" required />
+        <%- include('../partials/formErrors') %>
+        <button type="submit">Submit</button>
+      </form>
+      <a href="/">Back to home🪂</a>
+    </main>
+  </body>
+</html>

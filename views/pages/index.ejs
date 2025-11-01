@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+    <main>
+      <div class="category-container">
+        <h1>Categories</h1>
+        <% if (locals.categories && locals.categories.length>0) { %> <%
+        categories.forEach(category => { %>
+        <div class="category-card">
+          <a href="/category/<%= category.name %>"><%= category.name %></a>
+          <div class="actions">
+            <form action="/category/<%= category.id %>/update" method="get">
+              <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>edits</title>
+                  <path
+                    d="M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M15.1,7.07C15.24,7.07 15.38,7.12 15.5,7.23L16.77,8.5C17,8.72 17,9.07 16.77,9.28L15.77,10.28L13.72,8.23L14.72,7.23C14.82,7.12 14.96,7.07 15.1,7.07M13.13,8.81L15.19,10.87L9.13,16.93H7.07V14.87L13.13,8.81Z"
+                  />
+                </svg>
+              </button>
+            </form>
+            <form action="/category/<%= category.id %>/delete" method="get">
+              <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>delete</title>
+                  <path
+                    d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+        <% }) %>
+        <% } else { %>
+        <p>No category in the inventory, add some...</p>
+        <% } %>
+        <button class="createCategoryBtn">
+          <a href="/category/create">
+            Add
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <title>plus</title>
+              <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+            </svg>
+          </a>
+        </button>
+      </div>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

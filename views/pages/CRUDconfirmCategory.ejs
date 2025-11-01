@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/CRUDconfirm.css" />
+  <title>Shopy | Confirm</title>
+  <body>
+    <main>
+      <h1>This action need an admin password.</h1>
+      <form
+        action="/<%= route %>/<%= id %>/<%= confirmType %>/confirm"
+        method="post"
+      >
+        <div style="display: none">
+          <input
+            type="text"
+            name="category_name"
+            value="<%= category.name %>"
+          />
+          <textarea name="category_description">
+<%= category.description %>
+          </textarea>
+        </div>
+
+        <label for="password">Enter the Shopy secret password :</label>
+        <input type="password" name="password" id="password" required />
+        <%- include('../partials/formErrors') %>
+        <button type="submit">Submit</button>
+      </form>
+      <a href="/">Back to home🪂</a>
+    </main>
+  </body>
+</html>
