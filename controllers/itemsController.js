@@ -17,7 +17,7 @@ const imgLinkErr = `The image link must point to an image (jpg, jpeg, png, gif, 
 const itemValidationChain = [
   body('item_name')
     .trim()
-    .isAlphanumeric('fr-FR', { ignore: ' ' })
+    .isAlphanumeric('fr-FR', { ignore: " .,'-_:" })
     .withMessage('Then item name must only contain letters and numbers.')
     .isLength({ min: 2, max: 100 })
     .withMessage('The item name must be between 2 and 100 characters.'),
